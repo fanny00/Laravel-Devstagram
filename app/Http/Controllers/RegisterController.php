@@ -21,8 +21,10 @@ class RegisterController extends Controller
        // 'name' => ['required', 'min:5'],
         'name' => 'required|max:30',
         'username' => 'required|unique:users|min:3|max:20',
-        'email' => 'required|unique:users|email|60',
-        'password' => 'required'
+        'email' => 'required|unique:users|email|max:60',
+        'password' => 'required|confirmed|min:6'
      ]);
+
+     dd('Creando usuario');
    }
 }

@@ -10,7 +10,7 @@
             <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen registro usuario">
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST" novalidate >
                 @csrf
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -39,7 +39,8 @@
                         name="username"
                         type="text"
                         placeholder="Tu nombre de usuario"
-                        class="border p-3 w-full rounded-lg"
+                        class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+                        value="{{ old('username') }}"
                     />
                     @error('username')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -56,7 +57,8 @@
                         name="email"
                         type="email"
                         placeholder="Tu email de registro"
-                        class="border p-3 w-full rounded-lg"
+                        class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+                        value="{{ old('email') }}"
                     />
                     @error('email')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -73,7 +75,7 @@
                         name="password"
                         type="password"
                         placeholder="Password de registro"
-                        class="border p-3 w-full rounded-lg"
+                        class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
                     />
                     @error('password')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
