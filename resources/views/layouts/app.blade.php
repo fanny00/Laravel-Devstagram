@@ -19,7 +19,7 @@
                         <a class="font-bold text-gray-600 text-sm" href="#">
                             Hola: <span>{{ auth()->user()->username }}</span></a>
                         <a class="font-bold uppercase text-gray-600 text-sm" 
-                        href="{{ route('register') }}">
+                        href="{{ route('logout') }}">
                             Cerrar Sesión
                         </a>
                     </nav>
