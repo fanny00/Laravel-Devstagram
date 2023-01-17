@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @vite('resources/css/app.css')
-        
+        @method('styles')     
         <title>DevStagram - @yield('titulo')</title>
+        <script src="{{ asset('js/app.js') }} defender"></script>        
     </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">

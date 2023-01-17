@@ -8,5 +8,5 @@ const dropzone = new Dropzone('#dropzone', {
     addRemoveLinks: true,
     dictRemoveFile: 'Borrar Archivo',
     maxFiles: 1,
-    uploadMultiple: false
+    uploadMultiple: false,
 })
